@@ -1,0 +1,30 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=0.75]
+        \begin{axis}[
+            title=Title,
+            xlabel=X Axis,
+            ylabel=Y Axis,
+            xmin=0, xmax=100,
+            ymin=0, ymax=100,
+            legend pos=north west,
+        ]
+        
+        \addplot[smooth,
+            blue,
+            solid,
+            diamond,
+        ] 
+        table[
+            x=Iterations, 
+            y={PositiveEvaluations}, 
+            col sep=comma,
+        ]
+        {data/example_csv.csv};
+        \addlegendentry{Muestra de datos 1}
+        
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Caption.}
+    \label{fig:Label}
+\end{figure}

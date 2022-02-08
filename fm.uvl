@@ -1,0 +1,15 @@
+namespace SPLC2022
+
+features
+	SPLC2022 {abstract}	
+		optional
+			Color	
+				optional
+					Blue
+					Red
+			Mark	
+				optional
+					Square
+					Diamond
+
+constraints
