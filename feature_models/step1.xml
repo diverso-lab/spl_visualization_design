@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Visualization">
+			<alt abstract="true" mandatory="true" name="MessageToDisplay">
+				<feature abstract="true" name="IndividualValues"/>
+				<feature abstract="true" name="CompareIndividualValues"/>
+				<feature abstract="true" name="PreciseValues"/>
+				<feature abstract="true" name="PatternsTrendsAndExceptions"/>
+				<feature abstract="true" name="MoreThanOneUnitOfMeasure"/>
+				<feature abstract="true" name="VariousLevelsOfAggregation"/>
+				<feature abstract="true" name="EntireSeriesOfValues"/>
+			</alt>
+			<alt abstract="true" mandatory="true" name="Display">
+				<feature name="Graph"/>
+				<feature name="Table"/>
+			</alt>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>PatternsTrendsAndExceptions</var>
+				<var>Graph</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>EntireSeriesOfValues</var>
+				<var>Graph</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>IndividualValues</var>
+				<var>Table</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>CompareIndividualValues</var>
+				<var>Table</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>PreciseValues</var>
+				<var>Table</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MoreThanOneUnitOfMeasure</var>
+				<var>Table</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>VariousLevelsOfAggregation</var>
+				<var>Table</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
