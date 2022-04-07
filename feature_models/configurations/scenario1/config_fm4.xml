@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="VisualizationSoftware"/>
+	<feature automatic="selected" name="TargetOutput"/>
+	<feature automatic="selected" name="ResearchPublication"/>
+	<feature manual="selected" name="Latex"/>
+	<feature automatic="unselected" name="DataAnalysis"/>
+	<feature automatic="unselected" name="Python"/>
+	<feature automatic="unselected" name="R"/>
+	<feature automatic="unselected" name="WebPublication"/>
+	<feature automatic="unselected" name="JavaScript"/>
+	<feature automatic="selected" name="VisualizationLibrary"/>
+	<feature automatic="selected" name="pgfplots"/>
+	<feature automatic="unselected" name="matplotlib"/>
+	<feature automatic="unselected" name="ggplot2"/>
+	<feature automatic="unselected" name="d3"/>
+</configuration>

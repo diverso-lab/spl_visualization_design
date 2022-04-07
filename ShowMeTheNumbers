@@ -1,0 +1,141 @@
+namespace VariabilityVisualizationFramework
+
+features
+	VariabilityVisualizationFramework {abstract}	
+		mandatory
+			MessageToDisplay	
+				alternative
+					IndividualValues
+					CompareIndividualValues
+					PreciseValues
+					MoreThanOneUnitOfMeasure
+					VariousLevelsOfAggregation
+					PatternsTrendsAndExceptions
+					EntireSeriesOfValues
+			Display	
+				alternative
+					Graph	
+						mandatory
+							ValueEncodingObjects	
+								alternative
+									Points	
+										mandatory
+											PlotMarks	
+												alternative
+													TriangleMark
+													CrossMark
+													SquareMark
+													XMark
+													CircleMark
+											PointsPlot	
+												alternative
+													StripPlot
+													ScatterPlot
+													DotPlot
+									Lines	
+										mandatory
+											LineGraph	
+												optional
+													WithPoints
+									Bars	
+										mandatory
+											BarGraph	
+												alternative
+													VerticalBars
+													HorizontalBars
+									Boxes	
+										mandatory
+											BoxPlot	
+												alternative
+													VerticalBoxes
+													HorizontalBoxes
+							FeaturedRelationships	
+								alternative
+									TimeSeries	
+										or
+											Change
+											Rise
+											Increase
+											Fluctuate
+											Grow
+											Decline
+											Decrease
+											Trend
+									Ranking	
+										or
+											LargerThan
+											SmallerThan
+											EqualTo
+											GreaterThan
+											LessThan
+									PartToWhole	
+										or
+											RateOrRateOfTotal
+											PercentOrPercentageOfTotal
+											Share
+											AccountsForXPercent
+									Deviation	
+										or
+											PlusOrMinus
+											Variance
+											Difference
+											RelativeTo
+									Distribution	
+										mandatory
+											SetofValues	
+												alternative
+													SingleDistribution
+													MultipleDistribution
+											DistributionWords	
+												or
+													NormalCurve
+													Concentration
+													Frequency
+													Distribution_
+													Range
+													NormalDistribution
+													BellCurve
+									Correlation	
+										or
+											IncreasesWith
+											DecreasesWith
+											ChangesWith
+											VariesWith
+											CausedBy
+											AffectedBy
+											Follows
+									Geospatial	
+										or
+											Geography
+											Location
+											Where
+											Region
+											Territory
+											Country
+											State
+											City
+									NominalComparison	
+										or
+											ThisIsBiggerThanThat
+											ThisIsTheBiggestOfAll
+											ThisIsAlmostTwiceAsBigAsThat
+											TheseTwoAreFarBiggerThanAllTheOthers
+					Table
+
+constraints
+	IndividualValues => Table
+	CompareIndividualValues => Table
+	PreciseValues => Table
+	MoreThanOneUnitOfMeasure => Table
+	VariousLevelsOfAggregation => Table
+	PatternsTrendsAndExceptions => Graph
+	EntireSeriesOfValues => Graph
+	NominalComparison => Bars | DotPlot
+	TimeSeries => VerticalBars | DotPlot | Lines | VerticalBoxes
+	Ranking => Bars | DotPlot | Boxes
+	Deviation => Bars | Lines | DotPlot
+	Geospatial => Lines | Points
+	MultipleDistribution => Boxes | Lines | StripPlot
+	PartToWhole => Lines | Bars
+	SingleDistribution => Lines | Bars | StripPlot
+	Correlation => Bars | ScatterPlot

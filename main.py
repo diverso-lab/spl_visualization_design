@@ -5,10 +5,14 @@ from famapy.metamodels.fm_metamodel.models import FeatureModel, Feature
 from famapy.metamodels.fm_metamodel.transformations.uvl_reader import UVLReader
 from famapy.metamodels.fm_metamodel.transformations.featureide_reader import FeatureIDEReader
 
-from variation_point import VariationPoint
+from scripts.variation_point import VariationPoint
 
 
 EXAMPLE_CONFIG = {'SPLC2022', 'Color', 'Blue', 'Mark', 'Diamond'}
+CONFIG_FM1 = {'Visualization', 'MessageToDisplay', 'EntireSeriesOfValues', 'Graph'}
+CONFIG_FM2 = {'Graph', 'Information', 'MissingValues', 'DataRelationship', 'TimeSeries', 'change', 'ValueEncodingObject', 'Points', 'DotPlot'}
+
+
 
 
 def get_variant(feature: Feature, configuration: Configuration) -> Feature:

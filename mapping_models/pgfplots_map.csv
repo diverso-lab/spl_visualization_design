@@ -1,0 +1,34 @@
+VariationPointFeature, Handler, VariantFeature, VariantValue
+ValueEncodingObject, plot_type, ScatterPlot, only marks
+ValueEncodingObject, plot_type, LineGraph, smooth
+ValueEncodingObject, plot_type, VerticalBars, ybar
+ValueEncodingObject, plot_type, HorizontalBars, xbar
+XLogarithmic, x_log_scale, -, -
+YLogarithmic, y_log_scale, -, -
+LegendPos, legend_post, SouthWest, south west
+LegendPos, legend_post, SouthEast, south east
+LegendPos, legend_post, NorthWest, north west
+LegendPos, legend_post, NorthEast, north east
+LegendPos, legend_post, OuterNorthEast, outer north east
+Marker, mark, CircleMark, o
+Marker, mark, SquareMark, square
+Marker, mark, TriangleMark, triangle
+Marker, mark, PlusMark, +
+Marker, mark, CrossMark, x
+Color, color, Gray, gray
+Color, color, Blue, blue
+Color, color, Orange, orange
+Color, color, Green, green
+Color, color, Pink, pink
+Color, color, Red, red
+Color, color, Brown, brown
+Color, color, Purple, purple
+Color, color, yellow, yellow
+VisualComponents, title, VisualComponents.title, -
+XAxis, xaxis_label, Axis.label, -
+YAxis, yaxis_label, YAxis.label, -
+DataSet, plot.name, DataSet.name, -
+DataSet, plot.csv_file, DataSet.csvfile, -
+DataSet, plot.separator, DataSet.separator, -
+DataSet, plot.xaxis_column, DataSet.XAxisColumn, -
+DataSet, plot.yaxis_column, DataSet.YAxisColumn, -

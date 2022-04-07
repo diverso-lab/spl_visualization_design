@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="Graph"/>
+	<feature automatic="selected" name="Information"/>
+	<feature manual="selected" name="MissingValues"/>
+	<feature name="QuantitativeScaleNotBeginAtZero"/>
+	<feature automatic="selected" name="DataRelationship"/>
+	<feature automatic="selected" manual="selected" name="TimeSeries"/>
+	<feature manual="selected" name="change"/>
+	<feature name="rise"/>
+	<feature name="fluctuate"/>
+	<feature name="increase"/>
+	<feature name="grow"/>
+	<feature name="decline"/>
+	<feature name="decrease"/>
+	<feature name="trend"/>
+	<feature automatic="unselected" name="Ranking"/>
+	<feature automatic="unselected" name="largerThan"/>
+	<feature automatic="unselected" name="smallerThan"/>
+	<feature automatic="unselected" name="equalTo"/>
+	<feature automatic="unselected" name="greaterThan"/>
+	<feature automatic="unselected" name="lessThan"/>
+	<feature automatic="unselected" name="PartToWhole"/>
+	<feature automatic="unselected" name="rate"/>
+	<feature automatic="unselected" name="rateOfTotal"/>
+	<feature automatic="unselected" name="percent"/>
+	<feature automatic="unselected" name="percentOfTotal"/>
+	<feature automatic="unselected" name="share"/>
+	<feature automatic="unselected" name="accountsForXPercent"/>
+	<feature automatic="unselected" name="DistributionRelationship"/>
+	<feature automatic="unselected" name="DistributionKeywords"/>
+	<feature automatic="unselected" name="normalCurve"/>
+	<feature automatic="unselected" name="concentration"/>
+	<feature automatic="unselected" name="frequency"/>
+	<feature automatic="unselected" name="range"/>
+	<feature automatic="unselected" name="distribution"/>
+	<feature automatic="unselected" name="normalDistribution"/>
+	<feature automatic="unselected" name="bellCurve"/>
+	<feature automatic="unselected" name="DistributionType"/>
+	<feature automatic="unselected" name="SingleDistribution"/>
+	<feature automatic="unselected" name="MultipleDistribution"/>
+	<feature automatic="unselected" name="Deviation"/>
+	<feature automatic="unselected" name="plus"/>
+	<feature automatic="unselected" name="minus"/>
+	<feature automatic="unselected" name="variance"/>
+	<feature automatic="unselected" name="difference"/>
+	<feature automatic="unselected" name="relativeTo"/>
+	<feature automatic="unselected" name="Geospatial"/>
+	<feature automatic="unselected" name="geography"/>
+	<feature automatic="unselected" name="location"/>
+	<feature automatic="unselected" name="where"/>
+	<feature automatic="unselected" name="region"/>
+	<feature automatic="unselected" name="territory"/>
+	<feature automatic="unselected" name="country"/>
+	<feature automatic="unselected" name="state"/>
+	<feature automatic="unselected" name="city"/>
+	<feature automatic="unselected" name="Correlation"/>
+	<feature automatic="unselected" name="increasesWith"/>
+	<feature automatic="unselected" name="decreasesWith"/>
+	<feature automatic="unselected" name="changesWith"/>
+	<feature automatic="unselected" name="variesWith"/>
+	<feature automatic="unselected" name="causedBy"/>
+	<feature automatic="unselected" name="affectedBy"/>
+	<feature automatic="unselected" name="follows"/>
+	<feature automatic="unselected" name="NominalComparison"/>
+	<feature automatic="unselected" name="thisIsBiggerThanThat"/>
+	<feature automatic="unselected" name="thisIsTheBiggestOfAll"/>
+	<feature automatic="unselected" name="thisIsAlmostTwiceAsBigAsThat"/>
+	<feature automatic="unselected" name="theseTwoAreFarBiggerThanAllTheOthers"/>
+	<feature name="EmphasizeGoal"/>
+	<feature name="EmphIndividualValues"/>
+	<feature name="EmphOverallPattern"/>
+	<feature automatic="selected" name="ValueEncodingObject"/>
+	<feature automatic="selected" name="Points"/>
+	<feature automatic="unselected" name="ScatterPlot"/>
+	<feature automatic="selected" name="DotPlot"/>
+	<feature automatic="unselected" name="StripPlot"/>
+	<feature automatic="unselected" name="Lines"/>
+	<feature automatic="unselected" name="LineGraph"/>
+	<feature automatic="unselected" name="WithPoints"/>
+	<feature automatic="unselected" name="Bars"/>
+	<feature automatic="unselected" name="BarGraph"/>
+	<feature automatic="unselected" name="VerticalBars"/>
+	<feature automatic="unselected" name="HorizontalBars"/>
+	<feature automatic="unselected" name="Boxes"/>
+	<feature automatic="unselected" name="BoxPlot"/>
+	<feature automatic="unselected" name="VerticalBoxes"/>
+	<feature automatic="unselected" name="HorizontalBoxes"/>
+</configuration>
