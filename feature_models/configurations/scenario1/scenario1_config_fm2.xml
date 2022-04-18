@@ -67,17 +67,17 @@
 	<feature automatic="unselected" name="thisIsTheBiggestOfAll"/>
 	<feature automatic="unselected" name="thisIsAlmostTwiceAsBigAsThat"/>
 	<feature automatic="unselected" name="theseTwoAreFarBiggerThanAllTheOthers"/>
-	<feature name="EmphasizeGoal"/>
-	<feature name="EmphIndividualValues"/>
-	<feature name="EmphOverallPattern"/>
+	<feature automatic="selected" name="EmphasizeGoal"/>
+	<feature automatic="unselected" name="EmphIndividualValues"/>
+	<feature manual="selected" name="EmphOverallPattern"/>
 	<feature automatic="selected" name="ValueEncodingObject"/>
-	<feature automatic="selected" name="Points"/>
+	<feature automatic="unselected" name="Points"/>
 	<feature automatic="unselected" name="ScatterPlot"/>
-	<feature automatic="selected" name="DotPlot"/>
+	<feature automatic="unselected" name="DotPlot"/>
 	<feature automatic="unselected" name="StripPlot"/>
-	<feature automatic="unselected" name="Lines"/>
-	<feature automatic="unselected" name="LineGraph"/>
-	<feature automatic="unselected" name="WithPoints"/>
+	<feature automatic="selected" name="Lines"/>
+	<feature automatic="selected" name="LineGraph"/>
+	<feature automatic="selected" name="WithPoints"/>
 	<feature automatic="unselected" name="Bars"/>
 	<feature automatic="unselected" name="BarGraph"/>
 	<feature automatic="unselected" name="VerticalBars"/>

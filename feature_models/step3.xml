@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
 	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
 		<graphics key="legendautolayout" value="true"/>
 		<graphics key="showshortnames" value="false"/>
 		<graphics key="layout" value="horizontal"/>
@@ -13,10 +14,10 @@
 			<and abstract="true" mandatory="true" name="PrimaryComponents">
 				<and abstract="true" mandatory="true" name="DataSet">
 					<and abstract="true" mandatory="true" name="VisualAttributes">
-						<and abstract="true" mandatory="true" name="Position">
+						<and abstract="true" name="Position">
 							<feature abstract="true" name="Position2D"/>
 						</and>
-						<or abstract="true" mandatory="true" name="Form">
+						<or abstract="true" name="Form">
 							<alt abstract="true" name="Shape">
 								<feature name="CircleMark"/>
 								<feature name="SquareMark"/>
@@ -29,7 +30,7 @@
 							<feature abstract="true" name="Size"/>
 							<feature abstract="true" name="Orientation"/>
 						</or>
-						<and abstract="true" mandatory="true" name="Color">
+						<and abstract="true" name="Color">
 							<alt abstract="true" name="Hue">
 								<feature name="Gray"/>
 								<feature name="Blue"/>
@@ -51,10 +52,10 @@
 				</and>
 			</and>
 			<and abstract="true" mandatory="true" name="SecondaryComponents">
-				<alt abstract="true" name="Scales">
-					<feature name="Linear"/>
-					<feature name="Logarithmic"/>
-				</alt>
+				<and abstract="true" name="Scales">
+					<feature name="XLogarithmic"/>
+					<feature name="YLogarithmic"/>
+				</and>
 				<feature abstract="true" name="GridLines"/>
 				<feature abstract="true" name="Annotations"/>
 				<and abstract="true" name="Legend">
@@ -63,7 +64,7 @@
 						<feature name="SouthEast"/>
 						<feature name="NorthWest"/>
 						<feature name="NorthEast"/>
-						<feature name="OuterNorthWest"/>
+						<feature name="OuterNorthEast"/>
 					</alt>
 				</and>
 			</and>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
 	<feature automatic="selected" name="VisualizationSoftware"/>
-	<feature automatic="selected" name="TargetOutput"/>
+	<feature automatic="selected" name="TargetAudience"/>
 	<feature automatic="selected" name="ResearchPublication"/>
 	<feature manual="selected" name="Latex"/>
 	<feature automatic="unselected" name="DataAnalysis"/>

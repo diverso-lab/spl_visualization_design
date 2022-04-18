@@ -4,13 +4,13 @@
 	<feature automatic="selected" name="PrimaryComponents"/>
 	<feature automatic="selected" name="DataSet"/>
 	<feature automatic="selected" name="VisualAttributes"/>
-	<feature automatic="selected" name="Position"/>
+	<feature name="Position"/>
 	<feature name="Position2D"/>
 	<feature automatic="selected" name="Form"/>
 	<feature automatic="selected" manual="selected" name="Shape"/>
-	<feature manual="selected" name="CircleMark"/>
+	<feature automatic="unselected" name="CircleMark"/>
 	<feature automatic="unselected" name="SquareMark"/>
-	<feature automatic="unselected" name="TriangleMark"/>
+	<feature manual="selected" name="TriangleMark"/>
 	<feature automatic="unselected" name="PlusMark"/>
 	<feature automatic="unselected" name="CrossMark"/>
 	<feature name="Length"/>
@@ -20,12 +20,12 @@
 	<feature automatic="selected" name="Color"/>
 	<feature automatic="selected" manual="selected" name="Hue"/>
 	<feature automatic="unselected" name="Gray"/>
-	<feature manual="selected" name="Blue"/>
+	<feature automatic="unselected" name="Blue"/>
 	<feature automatic="unselected" name="Orange"/>
 	<feature automatic="unselected" name="Green"/>
 	<feature automatic="unselected" name="Pink"/>
 	<feature automatic="unselected" name="Red"/>
-	<feature automatic="unselected" name="Brown"/>
+	<feature manual="selected" name="Brown"/>
 	<feature automatic="unselected" name="Purple"/>
 	<feature automatic="unselected" name="Yellow"/>
 	<feature name="Intensity"/>
@@ -33,9 +33,9 @@
 	<feature name="Medium"/>
 	<feature name="DarkBright"/>
 	<feature automatic="selected" name="SecondaryComponents"/>
-	<feature automatic="selected" name="Scales"/>
-	<feature automatic="unselected" name="Linear"/>
-	<feature manual="selected" name="Logarithmic"/>
+	<feature name="Scales"/>
+	<feature name="XLogarithmic"/>
+	<feature name="YLogarithmic"/>
 	<feature name="GridLines"/>
 	<feature name="Annotations"/>
 	<feature automatic="selected" name="Legend"/>
@@ -44,7 +44,7 @@
 	<feature automatic="unselected" name="SouthEast"/>
 	<feature manual="selected" name="NorthWest"/>
 	<feature automatic="unselected" name="NorthEast"/>
-	<feature automatic="unselected" name="OuterNorthWest"/>
+	<feature automatic="unselected" name="OuterNorthEast"/>
 	<feature automatic="selected" name="NonDataComponents"/>
 	<feature automatic="selected" name="Axes"/>
 	<feature manual="selected" name="XAxis"/>

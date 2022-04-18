@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
 	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
 		<graphics key="legendautolayout" value="true"/>
 		<graphics key="showshortnames" value="false"/>
 		<graphics key="layout" value="horizontal"/>
@@ -10,7 +11,7 @@
 	</properties>
 	<struct>
 		<and abstract="true" mandatory="true" name="VisualizationSoftware">
-			<alt abstract="true" mandatory="true" name="TargetOutput">
+			<alt abstract="true" mandatory="true" name="TargetAudience">
 				<and abstract="true" name="ResearchPublication">
 					<feature abstract="true" mandatory="true" name="Latex"/>
 				</and>

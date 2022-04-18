@@ -1,0 +1,6 @@
+Attribute, Value
+DataSet.name, SPLC
+DataSet.csvfile, data/splc_papers_per_year.csv
+DataSet.separator, ","
+DataSet.XAxisColumn, Year
+DataSet.YAxisColumn, Papers

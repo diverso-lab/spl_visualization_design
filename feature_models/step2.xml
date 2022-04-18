@@ -2,6 +2,7 @@
 <featureModel>
 	<properties>
 		<graphics key="legendposition" value="1244,59"/>
+		<graphics key="autolayoutconstraints" value="false"/>
 		<graphics key="legendautolayout" value="false"/>
 		<graphics key="showshortnames" value="false"/>
 		<graphics key="layout" value="horizontal"/>
@@ -12,7 +13,7 @@
 	<struct>
 		<and abstract="true" mandatory="true" name="Graph">
 			<and abstract="true" mandatory="true" name="Information">
-				<graphics key="collapsed" value="true"/>
+				<graphics key="collapsed" value="false"/>
 				<feature abstract="true" name="MissingValues"/>
 				<feature abstract="true" name="QuantitativeScaleNotBeginAtZero"/>
 				<alt abstract="true" mandatory="true" name="DataRelationship">
@@ -139,7 +140,7 @@
 						<var>VerticalBars</var>
 						<disj>
 							<var>DotPlot</var>
-							<var>BoxPlot</var>
+							<var>VerticalBoxes</var>
 						</disj>
 					</disj>
 				</disj>
@@ -149,12 +150,7 @@
 			<imp>
 				<conj>
 					<var>TimeSeries</var>
-					<conj>
-						<var>EmphOverallPattern</var>
-						<not>
-							<var>MissingValues</var>
-						</not>
-					</conj>
+					<var>EmphOverallPattern</var>
 				</conj>
 				<var>LineGraph</var>
 			</imp>
@@ -179,7 +175,10 @@
 					<var>TimeSeries</var>
 					<var>MissingValues</var>
 				</conj>
-				<var>DotPlot</var>
+				<disj>
+					<var>DotPlot</var>
+					<var>WithPoints</var>
+				</disj>
 			</imp>
 		</rule>
 		<rule>
