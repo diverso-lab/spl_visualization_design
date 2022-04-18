@@ -1,0 +1,71 @@
+\begin{figure*}[!b]
+    \vspace{-0.4cm}
+    \centering
+    \begin{tikzpicture}%[scale=0.75]
+        \begin{axis}[
+            title style={yshift=-0.2cm},
+            x tick label style={/pgf/number format/1000 sep=},
+            width=\textwidth,
+            height=4cm,
+            xtick=data,
+            %xtick at={2000,1,...,2021},
+            %xticklabel={\year},
+            title=Number of publications in proceedings,
+            xlabel=Year,
+            ylabel=Papers,
+            %xmin=2000, xmax=2021,
+            %ymin=0, ymax=70,
+            legend pos=north west,
+            %ybar,
+            %only marks,
+            smooth,
+            enlargelimits=false,
+            %ybar interval=1,
+            grid=none,
+            %bar width=4pt,
+            enlarge x limits=0.025,
+            %x tick label style = {rotate=33},
+        ]
+        
+        \addplot+[
+            mark=o,
+            color=blue,
+        ]
+        table[
+            x=Year, 
+            y=Papers, 
+            col sep=comma
+        ]
+        {data/splc_papers_per_year.csv};
+        \addlegendentry{SPLC}
+        
+        \addplot+[
+            mark=square,
+            color=red,
+        ]
+        table[
+            x=Year, 
+            y=Papers, 
+            col sep=comma
+        ]
+        {data/vamos_papers_per_year.csv};
+        \addlegendentry{VAMOS}
+        
+        \addplot+[
+            mark=triangle,
+            color=brown,
+        ] 
+        table[
+            x=Year, 
+            y=Papers, 
+            col sep=comma
+        ]
+        {data/confws_papers_per_year.csv};
+        \addlegendentry{ConfWS}
+        
+        \end{axis}
+    \end{tikzpicture}
+    \vspace{-0.6cm}
+  \caption{Visualization generated for the Scenario 1: A lines graph with points representing the time series of Table~\ref{tab:Proceedings}.}
+  \label{fig:Scenario1}
+\end{figure*}

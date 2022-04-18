@@ -1,0 +1,136 @@
+namespace Graph
+
+features
+	Graph {abstract}	
+		mandatory
+			Information {abstract}	
+				optional
+					MissingValues {abstract}
+					QuantitativeScaleNotBeginAtZero {abstract}
+
+				mandatory
+					DataRelationship {abstract}	
+						alternative
+							TimeSeries {abstract}	
+								or
+									change {abstract}
+									rise {abstract}
+									fluctuate {abstract}
+									increase {abstract}
+									grow {abstract}
+									decline {abstract}
+									decrease {abstract}
+									trend {abstract}
+							Ranking {abstract}	
+								or
+									largerThan {abstract}
+									smallerThan {abstract}
+									equalTo {abstract}
+									greaterThan {abstract}
+									lessThan {abstract}
+							PartToWhole {abstract}	
+								or
+									rate {abstract}
+									rateOfTotal {abstract}
+									percent {abstract}
+									percentOfTotal {abstract}
+									share {abstract}
+									accountsForXPercent {abstract}
+							DistributionRelationship {abstract}	
+								mandatory
+									DistributionKeywords {abstract}	
+										or
+											normalCurve
+											concentration
+											frequency
+											range
+											distribution
+											normalDistribution
+											bellCurve
+									DistributionType {abstract}	
+										alternative
+											SingleDistribution {abstract}
+											MultipleDistribution {abstract}
+							Deviation {abstract}	
+								or
+									plus {abstract}
+									minus {abstract}
+									variance {abstract}
+									difference {abstract}
+									relativeTo {abstract}
+							Geospatial {abstract}	
+								or
+									geography
+									location
+									where
+									region
+									territory
+									country
+									state
+									city
+							Correlation {abstract}	
+								or
+									increasesWith {abstract}
+									decreasesWith {abstract}
+									changesWith {abstract}
+									variesWith {abstract}
+									causedBy {abstract}
+									affectedBy {abstract}
+									follows {abstract}
+							NominalComparison {abstract}	
+								or
+									thisIsBiggerThanThat {abstract}
+									thisIsTheBiggestOfAll {abstract}
+									thisIsAlmostTwiceAsBigAsThat {abstract}
+									theseTwoAreFarBiggerThanAllTheOthers {abstract}
+
+				optional
+					EmphasizeGoal {abstract}	
+						alternative
+							EmphIndividualValues {abstract}
+							EmphOverallPattern {abstract}
+			ValueEncodingObject {abstract}	
+				alternative
+					Points {abstract}	
+						alternative
+							ScatterPlot
+							DotPlot
+							StripPlot
+					Lines {abstract}	
+						mandatory
+							LineGraph	
+								optional
+									WithPoints
+					Bars {abstract}	
+						mandatory
+							BarGraph {abstract}	
+								alternative
+									VerticalBars
+									HorizontalBars
+					Boxes {abstract}	
+						mandatory
+							BoxPlot {abstract}	
+								alternative
+									VerticalBoxes
+									HorizontalBoxes
+
+constraints
+	TimeSeries => LineGraph | VerticalBars | DotPlot | VerticalBoxes
+	TimeSeries & EmphOverallPattern => LineGraph
+	TimeSeries & EmphIndividualValues & !MissingValues => VerticalBars
+	TimeSeries & MissingValues => DotPlot | WithPoints
+	Ranking => BarGraph | DotPlot | BoxPlot
+	Ranking & QuantitativeScaleNotBeginAtZero => DotPlot
+	DistributionRelationship => StripPlot | LineGraph | VerticalBars | BoxPlot
+	DistributionRelationship & EmphIndividualValues => StripPlot
+	DistributionRelationship & EmphOverallPattern => LineGraph
+	SingleDistribution => !Boxes
+	MultipleDistribution => !Bars
+	SingleDistribution & EmphIndividualValues => VerticalBars
+	PartToWhole => BarGraph | LineGraph
+	Deviation => BarGraph | DotPlot | LineGraph
+	Deviation & QuantitativeScaleNotBeginAtZero => DotPlot
+	Geospatial => Points | Lines
+	Correlation => ScatterPlot | HorizontalBars
+	NominalComparison => Bars | DotPlot
+	NominalComparison & QuantitativeScaleNotBeginAtZero => DotPlot

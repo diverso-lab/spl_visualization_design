@@ -5,11 +5,11 @@ ValueEncodingObject, plot_type, VerticalBars, ybar
 ValueEncodingObject, plot_type, HorizontalBars, xbar
 XLogarithmic, x_log_scale, -, -
 YLogarithmic, y_log_scale, -, -
-LegendPos, legend_post, SouthWest, south west
-LegendPos, legend_post, SouthEast, south east
-LegendPos, legend_post, NorthWest, north west
-LegendPos, legend_post, NorthEast, north east
-LegendPos, legend_post, OuterNorthEast, outer north east
+LegendPos, legend_pos, SouthWest, south west
+LegendPos, legend_pos, SouthEast, south east
+LegendPos, legend_pos, NorthWest, north west
+LegendPos, legend_pos, NorthEast, north east
+LegendPos, legend_pos, OuterNorthEast, outer north east
 Shape, plot.mark, CircleMark, o
 Shape, plot.mark, SquareMark, square
 Shape, plot.mark, TriangleMark, triangle

@@ -1,0 +1,87 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        title=None,
+        xlabel=None, ylabel=None,
+        only marks,  
+        xmode=log, 
+        ymode=log,
+        
+        legend pos=outer north east, 
+        
+    ]
+    
+    
+    \addplot+[
+        mark=o,
+        color=green,
+    ] 
+    table[
+        x=Features,
+        y=UVLFS,  
+        col sep=semicolon,
+    ]
+    { data/chico_dataset.csv };
+    \addlegendentry{ UVL }
+    
+    \addplot+[
+        mark=+,
+        color=blue,
+    ] 
+    table[
+        x=Features,
+        y=velvetFS,  
+        col sep=semicolon,
+    ]
+    { data/chico_dataset.csv };
+    \addlegendentry{ Velvet }
+    
+    \addplot+[
+        mark=x,
+        color=purple,
+    ] 
+    table[
+        x=Features,
+        y=guidslFS,  
+        col sep=semicolon,
+    ]
+    { data/chico_dataset.csv };
+    \addlegendentry{ GUIDSL }
+    
+    \addplot+[
+        mark=o,
+        color=brown,
+    ] 
+    table[
+        x=Features,
+        y=FamaFS,  
+        col sep=semicolon,
+    ]
+    { data/chico_dataset.csv };
+    \addlegendentry{ FAMA }
+    
+    \addplot+[
+        mark=triangle,
+        color=orange,
+    ] 
+    table[
+        x=Features,
+        y=ConquerFS,  
+        col sep=semicolon,
+    ]
+    { data/chico_dataset.csv };
+    \addlegendentry{ SPLConqueror }
+    
+    \addplot+[
+        mark=square,
+        color=pink,
+    ] 
+    table[
+        x=Features,
+        y=FeatureIDEFS,  
+        col sep=semicolon,
+    ]
+    { data/chico_dataset.csv };
+    \addlegendentry{ FeatureIDE }
+    
+    \end{axis}
+\end{tikzpicture}

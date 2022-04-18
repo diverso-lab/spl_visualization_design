@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="VisualComponents">
+			<and abstract="true" mandatory="true" name="PrimaryComponents">
+				<and abstract="true" mandatory="true" name="DataSet">
+					<and abstract="true" mandatory="true" name="VisualAttributes">
+						<and abstract="true" name="Position">
+							<feature abstract="true" name="Position2D"/>
+						</and>
+						<or abstract="true" name="Form">
+							<alt abstract="true" name="Shape">
+								<feature name="CircleMark"/>
+								<feature name="SquareMark"/>
+								<feature name="TriangleMark"/>
+								<feature name="PlusMark"/>
+								<feature name="CrossMark"/>
+							</alt>
+							<feature abstract="true" name="Length"/>
+							<feature abstract="true" name="Width"/>
+							<feature abstract="true" name="Size"/>
+							<feature abstract="true" name="Orientation"/>
+						</or>
+						<and abstract="true" name="Color">
+							<alt abstract="true" name="Hue">
+								<feature name="Gray"/>
+								<feature name="Blue"/>
+								<feature name="Orange"/>
+								<feature name="Green"/>
+								<feature name="Pink"/>
+								<feature name="Red"/>
+								<feature name="Brown"/>
+								<feature name="Purple"/>
+								<feature name="Yellow"/>
+							</alt>
+							<alt abstract="true" name="Intensity">
+								<feature name="Light"/>
+								<feature name="Medium"/>
+								<feature name="DarkBright"/>
+							</alt>
+						</and>
+					</and>
+				</and>
+			</and>
+			<and abstract="true" mandatory="true" name="SecondaryComponents">
+				<and abstract="true" name="Scales">
+					<feature name="XLogarithmic"/>
+					<feature name="YLogarithmic"/>
+				</and>
+				<feature abstract="true" name="GridLines"/>
+				<feature abstract="true" name="Annotations"/>
+				<and abstract="true" name="Legend">
+					<alt abstract="true" mandatory="true" name="LegendPos">
+						<feature name="SouthWest"/>
+						<feature name="SouthEast"/>
+						<feature name="NorthWest"/>
+						<feature name="NorthEast"/>
+						<feature name="OuterNorthEast"/>
+					</alt>
+				</and>
+			</and>
+			<and abstract="true" mandatory="true" name="NonDataComponents">
+				<graphics key="collapsed" value="false"/>
+				<and abstract="true" name="Axes">
+					<feature name="XAxis"/>
+					<feature name="YAxis"/>
+					<feature abstract="true" name="AxesPos"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>

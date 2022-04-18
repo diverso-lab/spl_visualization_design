@@ -1,0 +1,6 @@
+Attribute, Value
+DataSet.name, UVL
+DataSet.csvfile, data/chico_dataset.csv
+DataSet.separator, semicolon
+DataSet.XAxisColumn, Features
+DataSet.YAxisColumn, UVLFS

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendposition" value="1244,59"/>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Graph">
+			<and abstract="true" mandatory="true" name="Information">
+				<graphics key="collapsed" value="false"/>
+				<feature abstract="true" name="MissingValues"/>
+				<feature abstract="true" name="QuantitativeScaleNotBeginAtZero"/>
+				<alt abstract="true" mandatory="true" name="DataRelationship">
+					<or abstract="true" name="TimeSeries">
+						<graphics key="collapsed" value="false"/>
+						<feature abstract="true" name="change"/>
+						<feature abstract="true" name="rise"/>
+						<feature abstract="true" name="fluctuate"/>
+						<feature abstract="true" name="increase"/>
+						<feature abstract="true" name="grow"/>
+						<feature abstract="true" name="decline"/>
+						<feature abstract="true" name="decrease"/>
+						<feature abstract="true" name="trend"/>
+					</or>
+					<or abstract="true" name="Ranking">
+						<graphics key="collapsed" value="false"/>
+						<feature abstract="true" name="largerThan"/>
+						<feature abstract="true" name="smallerThan"/>
+						<feature abstract="true" name="equalTo"/>
+						<feature abstract="true" name="greaterThan"/>
+						<feature abstract="true" name="lessThan"/>
+					</or>
+					<or abstract="true" name="PartToWhole">
+						<graphics key="collapsed" value="false"/>
+						<feature abstract="true" name="rate"/>
+						<feature abstract="true" name="rateOfTotal"/>
+						<feature abstract="true" name="percent"/>
+						<feature abstract="true" name="percentOfTotal"/>
+						<feature abstract="true" name="share"/>
+						<feature abstract="true" name="accountsForXPercent"/>
+					</or>
+					<and abstract="true" name="DistributionRelationship">
+						<graphics key="collapsed" value="false"/>
+						<or abstract="true" mandatory="true" name="DistributionKeywords">
+							<graphics key="collapsed" value="true"/>
+							<feature name="normalCurve"/>
+							<feature name="concentration"/>
+							<feature name="frequency"/>
+							<feature name="range"/>
+							<feature name="distribution"/>
+							<feature name="normalDistribution"/>
+							<feature name="bellCurve"/>
+						</or>
+						<alt abstract="true" mandatory="true" name="DistributionType">
+							<feature abstract="true" name="SingleDistribution"/>
+							<feature abstract="true" name="MultipleDistribution"/>
+						</alt>
+					</and>
+					<or abstract="true" name="Deviation">
+						<graphics key="collapsed" value="false"/>
+						<feature abstract="true" name="plus"/>
+						<feature abstract="true" name="minus"/>
+						<feature abstract="true" name="variance"/>
+						<feature abstract="true" name="difference"/>
+						<feature abstract="true" name="relativeTo"/>
+					</or>
+					<or abstract="true" name="Geospatial">
+						<graphics key="collapsed" value="true"/>
+						<feature name="geography"/>
+						<feature name="location"/>
+						<feature name="where"/>
+						<feature name="region"/>
+						<feature name="territory"/>
+						<feature name="country"/>
+						<feature name="state"/>
+						<feature name="city"/>
+					</or>
+					<or abstract="true" name="Correlation">
+						<graphics key="collapsed" value="false"/>
+						<feature abstract="true" name="increasesWith"/>
+						<feature abstract="true" name="decreasesWith"/>
+						<feature abstract="true" name="changesWith"/>
+						<feature abstract="true" name="variesWith"/>
+						<feature abstract="true" name="causedBy"/>
+						<feature abstract="true" name="affectedBy"/>
+						<feature abstract="true" name="follows"/>
+					</or>
+					<or abstract="true" name="NominalComparison">
+						<graphics key="collapsed" value="false"/>
+						<feature abstract="true" name="thisIsBiggerThanThat"/>
+						<feature abstract="true" name="thisIsTheBiggestOfAll"/>
+						<feature abstract="true" name="thisIsAlmostTwiceAsBigAsThat"/>
+						<feature abstract="true" name="theseTwoAreFarBiggerThanAllTheOthers"/>
+					</or>
+				</alt>
+				<alt abstract="true" name="EmphasizeGoal">
+					<feature abstract="true" name="EmphIndividualValues"/>
+					<feature abstract="true" name="EmphOverallPattern"/>
+				</alt>
+			</and>
+			<alt abstract="true" mandatory="true" name="ValueEncodingObject">
+				<alt abstract="true" name="Points">
+					<feature name="ScatterPlot"/>
+					<feature name="DotPlot"/>
+					<feature name="StripPlot"/>
+				</alt>
+				<and abstract="true" name="Lines">
+					<and mandatory="true" name="LineGraph">
+						<feature name="WithPoints"/>
+					</and>
+				</and>
+				<and abstract="true" name="Bars">
+					<alt abstract="true" mandatory="true" name="BarGraph">
+						<feature name="VerticalBars"/>
+						<feature name="HorizontalBars"/>
+					</alt>
+				</and>
+				<and abstract="true" name="Boxes">
+					<alt abstract="true" mandatory="true" name="BoxPlot">
+						<feature name="VerticalBoxes"/>
+						<feature name="HorizontalBoxes"/>
+					</alt>
+				</and>
+			</alt>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>TimeSeries</var>
+				<disj>
+					<var>LineGraph</var>
+					<disj>
+						<var>VerticalBars</var>
+						<disj>
+							<var>DotPlot</var>
+							<var>VerticalBoxes</var>
+						</disj>
+					</disj>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>TimeSeries</var>
+					<var>EmphOverallPattern</var>
+				</conj>
+				<var>LineGraph</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>TimeSeries</var>
+					<conj>
+						<var>EmphIndividualValues</var>
+						<not>
+							<var>MissingValues</var>
+						</not>
+					</conj>
+				</conj>
+				<var>VerticalBars</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>TimeSeries</var>
+					<var>MissingValues</var>
+				</conj>
+				<disj>
+					<var>DotPlot</var>
+					<var>WithPoints</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Ranking</var>
+				<disj>
+					<var>BarGraph</var>
+					<disj>
+						<var>DotPlot</var>
+						<var>BoxPlot</var>
+					</disj>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>Ranking</var>
+					<var>QuantitativeScaleNotBeginAtZero</var>
+				</conj>
+				<var>DotPlot</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>DistributionRelationship</var>
+				<disj>
+					<var>StripPlot</var>
+					<disj>
+						<var>LineGraph</var>
+						<disj>
+							<var>VerticalBars</var>
+							<var>BoxPlot</var>
+						</disj>
+					</disj>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>DistributionRelationship</var>
+					<var>EmphIndividualValues</var>
+				</conj>
+				<var>StripPlot</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>DistributionRelationship</var>
+					<var>EmphOverallPattern</var>
+				</conj>
+				<var>LineGraph</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>SingleDistribution</var>
+				<not>
+					<var>Boxes</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MultipleDistribution</var>
+				<not>
+					<var>Bars</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>SingleDistribution</var>
+					<var>EmphIndividualValues</var>
+				</conj>
+				<var>VerticalBars</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>PartToWhole</var>
+				<disj>
+					<var>BarGraph</var>
+					<var>LineGraph</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Deviation</var>
+				<disj>
+					<var>BarGraph</var>
+					<disj>
+						<var>DotPlot</var>
+						<var>LineGraph</var>
+					</disj>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>Deviation</var>
+					<var>QuantitativeScaleNotBeginAtZero</var>
+				</conj>
+				<var>DotPlot</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Geospatial</var>
+				<disj>
+					<var>Points</var>
+					<var>Lines</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Correlation</var>
+				<disj>
+					<var>ScatterPlot</var>
+					<var>HorizontalBars</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>NominalComparison</var>
+				<disj>
+					<var>Bars</var>
+					<var>DotPlot</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>NominalComparison</var>
+					<var>QuantitativeScaleNotBeginAtZero</var>
+				</conj>
+				<var>DotPlot</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

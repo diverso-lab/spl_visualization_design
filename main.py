@@ -10,16 +10,16 @@ from xml.etree import ElementTree
 from famapy.core.models import Configuration
 
 from famapy.metamodels.fm_metamodel.models import FeatureModel, Feature
-from famapy.metamodels.fm_metamodel.transformations import FeatureIDEReader
+from famapy.metamodels.fm_metamodel.transformations import FeatureIDEReader, UVLReader
 
 from variation_point import VariationPoint, Variant
 
 
 # CONSTANTS
-FM1 = 'feature_models/step1.xml'
-FM2 = 'feature_models/step2.xml'
-FM3 = 'feature_models/step3.xml'
-FM4 = 'feature_models/step4.xml'
+FM1 = 'feature_models/UVL/step1.uvl'
+FM2 = 'feature_models/UVL/step2.uvl'
+FM3 = 'feature_models/UVL/step3.uvl'
+FM4 = 'feature_models/UVL/step4.uvl'
 
 
 def get_files(dir: str) -> tuple[list[str], list[str]]:
@@ -43,10 +43,10 @@ def get_files(dir: str) -> tuple[list[str], list[str]]:
 
 def load_feature_models() -> list[FeatureModel]:
     """Load the feature models of the visualization design process."""
-    fm1 = FeatureIDEReader(FM1).transform()
-    fm2 = FeatureIDEReader(FM2).transform()
-    fm3 = FeatureIDEReader(FM3).transform()
-    fm4 = FeatureIDEReader(FM4).transform()
+    fm1 = UVLReader(FM1).transform()
+    fm2 = UVLReader(FM2).transform()
+    fm3 = UVLReader(FM3).transform()
+    fm4 = UVLReader(FM4).transform()
     return [fm1, fm2, fm3, fm4]
 
 
@@ -158,7 +158,7 @@ def get_variant_value_in_configuration(fms: list[FeatureModel], variation_point:
         
 
 def build_template_maps(fms: list[FeatureModel], mapping_model: dict[str, VariationPoint], configurations: list[Configuration], attributes: list[dict[str, str]]) -> dict[str, Any]:
-    set_of_attributes = {a[a.index('.')+1:] for a_dict in attributes for a in a_dict.keys()}
+    #set_of_attributes = {a[a.index('.')+1:] for a_dict in attributes for a in a_dict.keys()}
     maps = {}
     multi_features_maps = []
 
@@ -167,6 +167,8 @@ def build_template_maps(fms: list[FeatureModel], mapping_model: dict[str, Variat
         if not '.' in vp.handler:  # it is a simple feature (not a multi-feature)
             if is_selected_in_a_configuration(vp.feature, configurations):
                 if not vp.variants:
+                    maps[vp.handler] = True
+                elif vp.variants[0].identifier == '-':
                     maps[vp.handler] = True
                 else:
                     maps[vp.handler] = get_variant_value(fms, vp, configurations, attributes)
@@ -177,9 +179,12 @@ def build_template_maps(fms: list[FeatureModel], mapping_model: dict[str, Variat
         feature = get_feature_from_fms('DataSet', fms)
         if feature in config.elements and config.elements[feature]:  # it is a instance configuration of the multi-feature
             config_attributes = attributes[i]
-            while not any('DataSet' in a for a in attributes[i].keys()):
-                i += 1
-                config_attributes = attributes[i]
+            try:
+                while not any('DataSet' in a for a in attributes[i].keys()):
+                    i += 1
+                    config_attributes = attributes[i]
+            except:
+                raise Exception('There is needed one configuration file for the attributes for at least one DataSet.')
             dataset_map = {}
             for vp in mapping_model.values():
                 if '.' in vp.handler:  # it is a multi-feature

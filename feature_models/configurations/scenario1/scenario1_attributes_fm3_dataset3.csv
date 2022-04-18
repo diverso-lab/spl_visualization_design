@@ -1,6 +1,0 @@
-Attribute, Value
-DataSet.name, ConfWS
-DataSet.csvfile, data/confws_papers_per_year.csv
-DataSet.separator, ","
-DataSet.XAxisColumn, Year
-DataSet.YAxisColumn, Papers

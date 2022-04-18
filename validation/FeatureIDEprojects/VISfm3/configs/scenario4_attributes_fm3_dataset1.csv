@@ -1,0 +1,5 @@
+Attribute, Value
+DataSet.csvfile, data/covid_data.csv
+DataSet.separator, comma
+DataSet.XAxisColumn, Casos
+DataSet.YAxisColumn, Ubicacion

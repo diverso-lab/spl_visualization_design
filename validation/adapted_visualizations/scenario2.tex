@@ -1,0 +1,83 @@
+\begin{figure}
+    \centering
+\begin{tikzpicture}[scale=0.75]
+    \pgfplotstableread[col sep=comma]{data/pie_chart.csv}\datatable
+   \begin{axis}[
+            title style={yshift=-0.2cm},
+            title=SPL phases covered,
+            %width=0.7\linewidth,
+            xbar=-0.5cm,
+            bar width=0.5cm,
+            %xticklabel pos=right,
+            xlabel=\% tools,
+            %xlabel near ticks,
+            enlarge y limits=0.2,
+            xmin=0,
+            xtick distance=5,
+            ytick=data,
+            y dir=reverse,
+            yticklabels from table={\datatable}{Phase},
+            %symbolic y coords={{All phases}, {Product Derivation (PD)}, {Domain Implementation (DI)}, {Requirements Analysis (RA)}, {Domain Analysis (DA)}},
+            xmajorgrids,
+            nodes near coords=\pgfmathprintnumber{\pgfplotspointmeta}\%, 
+            nodes near coords align={horizontal},
+        ]
+        
+        % \addplot+[color=blue] coordinates {(37,{Domain Analysis (DA)})};
+        % \addplot+[color=blue] coordinates {(36,{Requirements Analysis (RA)})};
+        % \addplot+[color=blue] coordinates {(17,{Domain Implementation (DI)})};
+        % \addplot+[color=blue] coordinates {(7,{Product Derivation (PD)})};
+        % \addplot+[color=blue] coordinates {(3,{All phases})};
+        % \addplot+ coordinates {
+        %     (37,{Domain Analysis (DA)}) (36,{Requirements Analysis (RA)}) (17,{Domain Implementation (DI)}) (7,{Product Derivation (PD)}) (3,All phases)
+        % };
+        
+        %   \addplot+ coordinates {
+        %     (37,{Domain Analysis (DA)}) (36,{Requirements Analysis (RA)}) (17,{Domain Implementation (DI)}) (7,{Product Derivation (PD)})
+        % };
+        % \addplot+[color=gray] coordinates {(3,{All phases})};
+        
+        \addplot+ [
+            mark=none, 
+            color=blue,
+        ] 
+        table [
+            x=Tools,
+            y expr=\coordindex,
+            col sep=comma,
+        ] 
+        {data/pie_chart.csv};
+        
+        % \addplot+[
+        %     mark=none,
+        %     color=red,
+        % ] 
+        % coordinates {(37,{Domain Analysis (DA)})};
+        
+        % \addplot+[
+        %     mark=none,
+        %     color=yellow,
+        % ] coordinates {(36,{Requirements Analysis (RA)})};
+        
+        % \addplot+[
+        %     mark=none,
+        %     color=brown,
+        % ] coordinates {(17,{Domain Implementation (DI)})};
+        
+        % \addplot+[
+        %     mark=none,
+        %     color=blue,
+        % ] coordinates {(7,{Product Derivation (PD)})};
+        
+        % \addplot+[
+        %     mark=none,
+        %     color=purple,
+        % ] coordinates {(3,{All phases})};
+        
+        \end{axis}
+\end{tikzpicture}
+  \vspace{-0.4cm}
+  \caption{Visualization for Scenario 2: a bar chart for the same part-to-whole information as the pie chart of Fig.~\ref{sfig:Scenario2}.}
+  \label{fig:Scenario2PieChart}
+    \vspace{-0.4cm}
+\end{figure}

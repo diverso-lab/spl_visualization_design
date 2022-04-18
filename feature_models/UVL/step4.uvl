@@ -1,0 +1,29 @@
+namespace VisualizationSoftware
+
+features
+	VisualizationSoftware {abstract}	
+		mandatory
+			TargetAudience {abstract}	
+				alternative
+					ResearchPublication {abstract}	
+						mandatory
+							Latex {abstract}
+					DataAnalysis {abstract}	
+						alternative
+							Python {abstract}
+							R {abstract}
+					WebPublication {abstract}	
+						mandatory
+							JavaScript {abstract}
+			VisualizationLibrary {abstract}	
+				alternative
+					pgfplots
+					matplotlib
+					ggplot2
+					d3
+
+constraints
+	Latex => pgfplots
+	Python => matplotlib
+	R => ggplot2
+	JavaScript => d3

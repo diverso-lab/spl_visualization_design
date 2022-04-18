@@ -1,6 +1,0 @@
-Attribute, Value
-DataSet.name, VaMoS
-DataSet.csvfile, data/vamos_papers_per_year.csv
-DataSet.separator, ","
-DataSet.XAxisColumn, Year
-DataSet.YAxisColumn, Papers

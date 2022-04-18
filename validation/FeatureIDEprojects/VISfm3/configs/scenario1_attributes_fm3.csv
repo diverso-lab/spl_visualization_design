@@ -1,0 +1,4 @@
+Attribute, Value
+VisualComponents.title, "Number of publications in proceedings"
+XAxis.label, Year
+YAxis.label, Papers

@@ -1,0 +1,6 @@
+Attribute, Value
+DataSet.name, SPLConqueror
+DataSet.csvfile, data/chico_dataset.csv
+DataSet.separator, semicolon
+DataSet.XAxisColumn, Features
+DataSet.YAxisColumn, ConquerFS

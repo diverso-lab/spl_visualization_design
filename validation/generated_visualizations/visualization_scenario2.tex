@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \begin{axis}[
+        title=SPL phases covered,
+        xlabel=% Tools, ylabel=None,
+        xbar,  
+         
+        
+        
+    ]
+    
+    
+    \addplot+[
+        mark=None,
+        color=blue,
+    ] 
+    table[
+        x=Tools,
+        y=Phase,  
+        col sep=comma,
+    ]
+    { data/pie_chart.csv };
+    
+    
+    \end{axis}
+\end{tikzpicture}

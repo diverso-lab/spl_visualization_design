@@ -1,0 +1,69 @@
+namespace VisualComponents
+
+features
+	VisualComponents {abstract}	
+		mandatory
+			PrimaryComponents {abstract}	
+				mandatory
+					DataSet {abstract}	
+						mandatory
+							VisualAttributes {abstract}	
+								optional
+									Position {abstract}	
+										optional
+											Position2D {abstract}
+									Form {abstract}	
+										or
+											Shape {abstract}	
+												alternative
+													CircleMark
+													SquareMark
+													TriangleMark
+													PlusMark
+													CrossMark
+											Length {abstract}
+											Width {abstract}
+											Size {abstract}
+											Orientation {abstract}
+									Color {abstract}	
+										optional
+											Hue {abstract}	
+												alternative
+													Gray
+													Blue
+													Orange
+													Green
+													Pink
+													Red
+													Brown
+													Purple
+													Yellow
+											Intensity {abstract}	
+												alternative
+													Light
+													Medium
+													DarkBright
+			SecondaryComponents {abstract}	
+				optional
+					Scales {abstract}	
+						optional
+							XLogarithmic
+							YLogarithmic
+					GridLines {abstract}
+					Annotations {abstract}
+					Legend {abstract}	
+						mandatory
+							LegendPos {abstract}	
+								alternative
+									SouthWest
+									SouthEast
+									NorthWest
+									NorthEast
+									OuterNorthEast
+			NonDataComponents {abstract}	
+				optional
+					Axes {abstract}	
+						optional
+							XAxis
+							YAxis
+							AxesPos {abstract}

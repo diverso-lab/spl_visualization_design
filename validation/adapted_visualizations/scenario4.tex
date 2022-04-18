@@ -1,0 +1,37 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=0.75]
+        \pgfplotstableread[col sep=comma]{data/covid_data.csv}\datatable
+        \begin{axis}[
+            title style={yshift=-0.2cm},
+            title=Covid-19 incidence in Spain per Region,
+            xbar=-0.5cm,
+            bar width=0.25cm,
+            enlarge y limits=0.025,
+            xmin=0,
+            xmajorgrids,
+            xlabel=Covid-19 cases,
+            ytick=data,
+            y dir=reverse,
+            yticklabels from table={\datatable}{Ubicacion},
+        ]
+        
+        \addplot+ [
+            mark=none, 
+            color=blue,
+        ] 
+        table [
+            x=Casos,
+            y expr=\coordindex,
+            col sep=comma,
+        ] 
+        {data/covid_data.csv};
+        
+        \end{axis}
+    \end{tikzpicture}
+  \vspace{-0.4cm}
+  \caption{Visualization for Scenario 4: a bar chart to compare the Covid-19 incidence in Spain from map of Figure~\ref{sfig:Scenario4}.}
+  \label{fig:CovidBarGraph}
+    \vspace{-0.4cm}
+\end{figure}
+

@@ -1,0 +1,5 @@
+Attribute, Value
+DataSet.csvfile, data/pie_chart.csv
+DataSet.separator, comma
+DataSet.XAxisColumn, Tools
+DataSet.YAxisColumn, Phase

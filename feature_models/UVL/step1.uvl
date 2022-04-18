@@ -1,0 +1,27 @@
+namespace Visualization
+
+features
+	Visualization {abstract}	
+		mandatory
+			MessageToDisplay {abstract}	
+				alternative
+					IndividualValues {abstract}
+					CompareIndividualValues {abstract}
+					PreciseValues {abstract}
+					PatternsTrendsAndExceptions {abstract}
+					MoreThanOneUnitOfMeasure {abstract}
+					VariousLevelsOfAggregation {abstract}
+					EntireSeriesOfValues {abstract}
+			Display {abstract}	
+				alternative
+					Graph
+					Table
+
+constraints
+	PatternsTrendsAndExceptions => Graph
+	EntireSeriesOfValues => Graph
+	IndividualValues => Table
+	CompareIndividualValues => Table
+	PreciseValues => Table
+	MoreThanOneUnitOfMeasure => Table
+	VariousLevelsOfAggregation => Table
