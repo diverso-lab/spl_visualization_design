@@ -16,10 +16,10 @@ from variation_point import VariationPoint, Variant
 
 
 # CONSTANTS
-FM1 = 'feature_models/UVL/step1.uvl'
-FM2 = 'feature_models/UVL/step2.uvl'
-FM3 = 'feature_models/UVL/step3.uvl'
-FM4 = 'feature_models/UVL/step4.uvl'
+FM1 = 'feature_models/FeatureIDE/step1.xml'
+FM2 = 'feature_models/FeatureIDE/step2.xml'
+FM3 = 'feature_models/FeatureIDE/step3.xml'
+FM4 = 'feature_models/FeatureIDE/step4.xml'
 
 
 def get_files(dir: str) -> tuple[list[str], list[str]]:
@@ -43,10 +43,10 @@ def get_files(dir: str) -> tuple[list[str], list[str]]:
 
 def load_feature_models() -> list[FeatureModel]:
     """Load the feature models of the visualization design process."""
-    fm1 = UVLReader(FM1).transform()
-    fm2 = UVLReader(FM2).transform()
-    fm3 = UVLReader(FM3).transform()
-    fm4 = UVLReader(FM4).transform()
+    fm1 = FeatureIDEReader(FM1).transform()
+    fm2 = FeatureIDEReader(FM2).transform()
+    fm3 = FeatureIDEReader(FM3).transform()
+    fm4 = FeatureIDEReader(FM4).transform()
     return [fm1, fm2, fm3, fm4]
 
 
@@ -241,7 +241,7 @@ if __name__ == '__main__':
 
     template_loader = jinja2.FileSystemLoader(searchpath="./")
     environment = jinja2.Environment(loader=template_loader)
-    template = environment.get_template('template.tex')
+    template = environment.get_template('templates/template.tex')
     content = template.render(maps)
 
     with open('visualization.tex', 'w', encoding='utf-8') as file:
