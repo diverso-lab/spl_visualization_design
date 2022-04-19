@@ -1,9 +1,6 @@
-# Variability in Data Visualization: a Software Product Line Approach
-This repository contains all the resources and artifacts that support the paper entitled "Variability in Data Visualization: a Software Product Line Approach" submmited to the 26th International Systems and Software Product Line Conference (SPLC 2022).
-
 # Table of Contents
-- [Variability in Data Visualization: a Software Product Line Approach](#variability-in-data-visualization-a-software-product-line-approach)
 - [Table of Contents](#table-of-contents)
+- [Variability in Data Visualization: a Software Product Line Approach](#variability-in-data-visualization-a-software-product-line-approach)
   - [Artifact description](#artifact-description)
   - [How to use it](#how-to-use-it)
     - [Requirements](#requirements)
@@ -12,6 +9,9 @@ This repository contains all the resources and artifacts that support the paper 
     - [Results output](#results-output)
   - [Validation replication](#validation-replication)
   - [References and third-party software](#references-and-third-party-software)
+
+# Variability in Data Visualization: a Software Product Line Approach
+This repository contains all the resources and artifacts that support the paper entitled "Variability in Data Visualization: a Software Product Line Approach" submmited to the 26th International Systems and Software Product Line Conference (SPLC 2022).
 
 ## Artifact description
 An implementation of the *software product line* (SPL) for the *visualization design process* (VDP) that allows generating customized visualizations following the best design practices in data visualization.
