@@ -74,7 +74,7 @@ To execute the SPL run the following command:
 
 ### Results output
 The scripts generate the visualization in the main directory with the source code of the visualization in *Latex* using the *pgfplots* and *tikz* packages.
-The scripts also print out in the terminal information about the process including:ç
+The scripts also print out in the terminal information about the process including:
 - The configurations (.xml) found in the directory and considered in the SPL.
 - The attributes files (.csv) found in the directory and considered in the SPL.
 - The mapping model used.
