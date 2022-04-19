@@ -17,7 +17,9 @@ This repository contains all the resources and artifacts that support the paper 
 An implementation of the *software product line* (SPL) for the *visualization design process* (VDP) that allows generating customized visualizations following the best design practices in data visualization.
 It contains the following resources classified according to the SPL processes:
 
-<img style="float: center;" width="500" src="img/spl.png">
+<p align="center">
+  <img width="500" src="img/spl.png">
+</p>
 
 - **DOMAIN ENGINEERING**:
   - The [**feature models**](feature_models/) in the [UVL](https://github.com/Universal-Variability-Language) and [FeatureIDE](https://www.featureide.de/) formats that encode the variability of the VDP and knowledge abour best design practices. Concretely, there are four feature models, one for each step in the VDP:
