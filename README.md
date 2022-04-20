@@ -64,6 +64,7 @@ To use the SPL follow the next steps:
    
    `pip install -r requirements.txt`
 
+   ** In case that you are running Ubuntu, please install the package python3.9-dev and update wheel and setuptools with the command `pip  install --upgrade pip wheel setuptools` right after step 4.
 ### Execution
 To execute the SPL run the following command:
 
