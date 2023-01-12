@@ -43,12 +43,12 @@ Additionally, we provide the following resources to replicate the visualizations
 ## How to use it
 
 ### Requirements
-- [Python 3.9+](https://www.python.org/) to execute the SPL and generate a visualization.
+- [Python 3.10+](https://www.python.org/) to execute the SPL and generate a visualization.
 - [FeatureIDE](https://www.featureide.de/), only in case you want to create new configurations for other visualizations.
 
 ### Download and install
 To use the SPL follow the next steps:
-1. Install [Python 3.9+](https://www.python.org/)
+1. Install [Python 3.10+](https://www.python.org/)
 2. Download this repository and enter into the main directory: 
 
    `cd spl_visualization_design` 
@@ -64,7 +64,7 @@ To use the SPL follow the next steps:
    
    `pip install -r requirements.txt`
 
-   ** In case that you are running Ubuntu, please install the package python3.9-dev and update wheel and setuptools with the command `pip  install --upgrade pip wheel setuptools` right after step 4.
+   ** In case that you are running Ubuntu, please install the package python3.10-dev and update wheel and setuptools with the command `pip  install --upgrade pip wheel setuptools` right after step 4.
 ### Execution
 To execute the SPL run the following command:
 
