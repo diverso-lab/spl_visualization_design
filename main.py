@@ -201,9 +201,15 @@ def build_template_maps(fms: list[FeatureModel], mapping_model: dict[str, Variat
 
 
 if __name__ == '__main__':
+
     parser = argparse.ArgumentParser(description='Generate Visualization')
+
     parser.add_argument('-f', dest='folder', type=str, required=True, 
                         help='Directory with the configurations and attributes files.')
+
+    parser.add_argument('-t', dest='type', type=str, required=False,
+                        help='Directory with the configurations and attributes files.')
+
     args = parser.parse_args()
 
     # Identify configurations and attributes files
@@ -217,35 +223,43 @@ if __name__ == '__main__':
     for i, attribute_file in enumerate(attributes_files):
         print(f'|-{i}: {attribute_file}')
 
-    # Load the feature models
-    fms = load_feature_models()
+    type = args.type
 
-    # Parse configurations and attributes
-    configurations = [parse_configuration(file, fms) for file in configurations_files]
-    attributes = [parse_attributes(file) for file in attributes_files]
+    if type == "graph":
 
-    # Load the mapping model
-    mapping_model = load_mapping_model('mapping_models/pgfplots_map.csv', fms)
-    print(f'MAPPING MODEL:')
-    for i, vp in enumerate(mapping_model.values()):
-        print(f'|-vp{i}: {vp}')
+        # Load the feature models
+        fms = load_feature_models()
 
-    maps = build_template_maps(fms, mapping_model, configurations, attributes)
-    print(f'TEMPLATE CONFIGURATION:')
-    for h, v in maps.items():
-        if isinstance(v, list):
-            for i, multi_map in enumerate(v):
-                print(f'|-plot{i}: {multi_map}')
-        else:
-            print(f'|-{h}: {v}')
+        # Parse configurations and attributes
+        configurations = [parse_configuration(file, fms) for file in configurations_files]
+        attributes = [parse_attributes(file) for file in attributes_files]
 
-    template_loader = jinja2.FileSystemLoader(searchpath="./")
-    environment = jinja2.Environment(loader=template_loader)
-    template = environment.get_template('templates/template.tex')
-    content = template.render(maps)
+        # Load the mapping model
+        mapping_model = load_mapping_model('mapping_models/pgfplots_map.csv', fms)
+        print(f'MAPPING MODEL:')
+        for i, vp in enumerate(mapping_model.values()):
+            print(f'|-vp{i}: {vp}')
 
-    with open('visualization.tex', 'w', encoding='utf-8') as file:
-        file.write(content)
+        maps = build_template_maps(fms, mapping_model, configurations, attributes)
+        print(f'TEMPLATE CONFIGURATION:')
+        for h, v in maps.items():
+            if isinstance(v, list):
+                for i, multi_map in enumerate(v):
+                    print(f'|-plot{i}: {multi_map}')
+            else:
+                print(f'|-{h}: {v}')
+
+        template_loader = jinja2.FileSystemLoader(searchpath="./")
+        environment = jinja2.Environment(loader=template_loader)
+        template = environment.get_template('templates/template.tex')
+        content = template.render(maps)
+
+        with open('visualization.tex', 'w', encoding='utf-8') as file:
+            file.write(content)
+
+    if type == "table":
+
+        print("Hola")
 
     #print(f'MAPPING MODEL: {mapping_model}')
     #print(f'CONFIGURATIONS: {configurations}')
