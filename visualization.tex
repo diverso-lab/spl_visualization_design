@@ -1,51 +1,25 @@
 \begin{tikzpicture}
     \begin{axis}[
-        title=Number of publications in proceedings,
-        xlabel=Year, ylabel=Papers,
-        smooth,  
+        title=Covid-19 incidence in Spain per Region,
+        xlabel=Covid-19 cases, ylabel=None,
+        xbar,  
          
         
         
-        legend pos=north west, 
-        
     ]
     
     
     \addplot+[
-        mark=o,
+        mark=None,
         color=blue,
     ] 
     table[
-        x=Year,
-        y=Papers,  
+        x=Casos,
+        y=Ubicacion,  
         col sep=comma,
     ]
-    { data/splc_papers_per_year.csv };
-    \addlegendentry{ SPLC }
+    { data/covid_data.csv };
     
-    \addplot+[
-        mark=square,
-        color=red,
-    ] 
-    table[
-        x=Year,
-        y=Papers,  
-        col sep=comma,
-    ]
-    { data/vamos_papers_per_year.csv };
-    \addlegendentry{ VaMoS }
-    
-    \addplot+[
-        mark=triangle,
-        color=brown,
-    ] 
-    table[
-        x=Year,
-        y=Papers,  
-        col sep=comma,
-    ]
-    { data/confws_papers_per_year.csv };
-    \addlegendentry{ ConfWS }
     
     \end{axis}
 \end{tikzpicture}

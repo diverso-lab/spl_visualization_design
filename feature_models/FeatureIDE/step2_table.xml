@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendposition" value="1244,59"/>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Table">
+
+			<and abstract="true" mandatory="true" name="Information">
+
+				<alt abstract="true" mandatory="true" name="DataRelationship">
+
+					<alt abstract="true" name="QuantitativeToCategorical">
+						<feature abstract="true" name="SingleSetOfCategories"/>
+						<feature abstract="true" name="MultipleCategories"/>
+						<feature abstract="true" name="HierarchicalCategories"/>
+					</alt>
+
+					<alt abstract="true" name="QuantitativeToQuantitative">
+						<feature abstract="true" name="SingleCategoricalItems"/>
+						<feature abstract="true" name="MultipleCategoricalItems"/>
+					</alt>
+
+				</alt>
+
+			</and>
+
+			<alt abstract="true" mandatory="true" name="TableType">
+
+				<feature name="Unidirectional"/>
+				<feature name="Bidirectional"/>
+
+			</alt>
+		</and>
+	</struct>
+
+	<constraints>
+
+		<rule>
+			<imp>
+				<var>SingleSetOfCategories</var>
+				<var>Unidirectional</var>
+			</imp>
+		</rule>
+
+		<rule>
+			<imp>
+				<var>MultipleCategories</var>
+				<disj>
+					<var>Unidirectional</var>
+					<var>Bidirectional</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>HierarchicalCategories</var>
+				<disj>
+					<var>Unidirectional</var>
+					<var>Bidirectional</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>SingleCategoricalItems</var>
+				<var>Unidirectional</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MultipleCategoricalItems</var>
+				<disj>
+					<var>Unidirectional</var>
+					<var>Bidirectional</var>
+				</disj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

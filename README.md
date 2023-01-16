@@ -85,10 +85,10 @@ The scripts also print out in the terminal information about the process includi
 ## Validation replication
 To replicate the experiments of the paper and generate the visualizations run the following commands:
 
-1. Scenario 1: `python main.py -f validation/configurations/scenario1`
-2. Scenario 2: `python main.py -f validation/configurations/scenario2`
-3. Scenario 3: `python main.py -f validation/configurations/scenario3`
-4. Scenario 4: `python main.py -f validation/configurations/scenario4`
+1. Scenario 1: `python main.py -f validation/configurations/scenario1 -t graph`
+2. Scenario 2: `python main.py -f validation/configurations/scenario2 -t graph`
+3. Scenario 3: `python main.py -f validation/configurations/scenario3 -t graph`
+4. Scenario 4: `python main.py -f validation/configurations/scenario4 -t graph`
 
 In all cases, a `visualization.tex` file is generated in the main directory with the source code of the visualization in *Latex* using the *pgfplots* and *tikz* packages.
 
