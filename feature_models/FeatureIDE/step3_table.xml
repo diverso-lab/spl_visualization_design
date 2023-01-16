@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendposition" value="1244,59"/>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+
+		<and abstract="true" mandatory="true" name="VisualComponents">
+
+			<and abstract="true" mandatory="true" name="PrimaryComponents">
+
+				<and abstract="true" mandatory="true" name="DataSet">
+
+					<alt abstract="true" name="InformationType">
+
+						<feature abstract="true" name="CircleMark"/>
+						<feature abstract="true" name="CircleMark"/>
+
+					</alt>
+
+					<alt abstract="true" name="Alignment">
+
+						<feature abstract="true" name="Left"/>
+						<feature abstract="true" name="Center"/>
+						<feature abstract="true" name="Right"/>
+
+					</alt>
+
+					<and abstract="true" name="HighlightValues">
+
+					</and>
+
+					<alt abstract="true" name="BackgroundColor">
+
+						<alt abstract="true" name="Hue">
+							<feature name="Gray"/>
+							<feature name="Blue"/>
+							<feature name="Orange"/>
+							<feature name="Green"/>
+							<feature name="Pink"/>
+							<feature name="Red"/>
+							<feature name="Brown"/>
+							<feature name="Purple"/>
+							<feature name="Yellow"/>
+						</alt>
+
+						<alt abstract="true" name="Intensity">
+							<feature name="Light"/>
+							<feature name="Medium"/>
+							<feature name="DarkBright"/>
+						</alt>
+
+					</alt>
+
+				</and>
+
+				<or abstract="true" name="MissingValues">
+
+					<and abstract="true" name="UnknownValues">
+
+						<feature name="LargeDash"/>
+
+					</and>
+
+					<and abstract="true" name="ValuesNotAvailable">
+						<feature name="NA"/>
+					</and>
+
+					<and abstract="true" name="NotApplicable">
+						<feature name="LargeBlackDot"/>
+					</and>
+
+				</or>
+
+			</and>
+
+			<and abstract="true" mandatory="true" name="SecondaryComponents">
+
+				<feature abstract="true" name="FootNotes"/>
+
+				<alt abstract="true" name="Orientation">
+
+					<feature name="Horizontal"/>
+					<feature name="Vertical"/>
+
+				</alt>
+
+				<feature abstract="true" name="Annotations"/>
+
+			</and>
+
+			<and abstract="true" mandatory="true" name="NonDataComponents">
+
+				<or abstract="true" name="Rules">
+					<feature name="Bottom"/>
+					<feature name="Middle"/>
+					<feature name="Top"/>
+				</or>
+
+				<feature name="StrippedCells"/>
+
+				<alt abstract="true" name="CellVerticalSeparation">
+					<feature name="Min"/>
+					<feature name="Medium"/>
+					<feature name="Max"/>
+				</alt>
+
+			</and>
+
+		</and>
+
+
+	</struct>
+
+	<constraints>
+
+		<rule>
+			<imp>
+				<var>SingleSetOfCategories</var>
+				<var>Unidirectional</var>
+			</imp>
+		</rule>
+
+		<rule>
+			<imp>
+				<var>MultipleCategories</var>
+				<disj>
+					<var>Unidirectional</var>
+					<var>Bidirectional</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>HierarchicalCategories</var>
+				<disj>
+					<var>Unidirectional</var>
+					<var>Bidirectional</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>SingleCategoricalItems</var>
+				<var>Unidirectional</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MultipleCategoricalItems</var>
+				<disj>
+					<var>Unidirectional</var>
+					<var>Bidirectional</var>
+				</disj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
