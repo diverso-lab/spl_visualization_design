@@ -58,8 +58,8 @@ def load_feature_models_table() -> list[FeatureModel]:
     fm1 = FeatureIDEReader(FM1).transform()
     fm2 = FeatureIDEReader(FM2_table).transform()
     fm3 = FeatureIDEReader(FM3_table).transform()
-    #fm4 = FeatureIDEReader(FM4_table).transform()
-    return [fm1, fm2, fm3]
+    fm4 = FeatureIDEReader(FM4_table).transform()
+    return [fm1, fm2, fm3, fm4]
 
 
 def get_feature_from_fms(feature_name: str, fms: list[FeatureModel]) -> Feature:
