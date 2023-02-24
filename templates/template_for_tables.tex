@@ -1,0 +1,39 @@
+% Uncomment the line below to include the package in LaTeX
+%\usepackage{tabularx}
+\begin{table}[t]
+    \caption{ {{ title }} }
+    \centering
+    \setlength{\tabcolsep}{
+    {% if cell %}
+        {% if cell == min %} 0.5p {% endif %}
+        {% if cell == medium %} 1p {% endif %}
+        {% if cell == max %} 2p {% endif %}
+    {% endif %}
+    }
+    \begin{tabularx}{
+        {% for data_component in data_components %}
+            {% if data_component.alignment %}
+                {% if data_component.alignment  == left %} l {% endif %}
+                {% if data_component.alignment  == center %} c {% endif %}
+                {% if data_component.alignment  == right %} r {% endif %}
+            {% else %} l
+            {% endif %}
+        {% endfor %}
+    }
+
+    {% for data_component in data_components %}
+        {% if data_component.rules  == top %} \toprule {% endif %}
+        {% if data_component.rules  == middle %} \midrule {% endif %}
+        {% if data_component.rules  == bottom %} \bottomrule {% endif %}
+
+        {% if loop.index > 0 %} & {% endif %}
+        {{ data_component.title }}
+    {% endfor %}
+
+    \midrule
+
+    {{ csv_file }}
+
+    \bottomrule
+    \end{tabular}
+\end{table}

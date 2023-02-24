@@ -10,6 +10,12 @@ InformationType, data_component.information, Numeric, numeric
 Alignment, data_component.alignment, Left, left
 Alignment, data_component.alignment, Center, center
 Alignment, data_component.alignment, Right, right
+Rules, data_component.rules, Bottom, bottom
+Rules, data_component.rules, Middle, middle
+Rules, data_component.rules, Top, top
+CellVerticalSeparation, cell, Min, min
+CellVerticalSeparation, cell, Medium, medium
+CellVerticalSeparation, cell, Max, max
 Hue, data_component.color, Gray, gray
 Hue, data_component.color, Blue, blue
 Hue, data_component.color, Orange, orange
@@ -19,3 +25,5 @@ Hue, data_component.color, Red, red
 Hue, data_component.color, Brown, brown
 Hue, data_component.color, Purple, purple
 Hue, data_component.color, yellow, yellow
+DataSet, name, DataSet.name, -
+DataSet, csv_file, DataSet.csvfile, -

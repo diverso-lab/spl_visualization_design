@@ -272,7 +272,7 @@ if __name__ == '__main__':
 
         template_loader = jinja2.FileSystemLoader(searchpath="./")
         environment = jinja2.Environment(loader=template_loader)
-        template = environment.get_template('templates/template.tex')
+        template = environment.get_template('templates/template_for_graphs.tex')
         content = template.render(maps)
 
         with open('visualization_graph.tex', 'w', encoding='utf-8') as file:
@@ -304,7 +304,7 @@ if __name__ == '__main__':
 
         template_loader = jinja2.FileSystemLoader(searchpath="./")
         environment = jinja2.Environment(loader=template_loader)
-        template = environment.get_template('templates/tabular.tex')
+        template = environment.get_template('templates/template_for_tables.tex')
         content = template.render(maps)
 
         with open('visualization_table.tex', 'w', encoding='utf-8') as file:
