@@ -17,11 +17,17 @@
 				</and>
 				<alt abstract="true" name="DataAnalysis">
 					<feature abstract="true" name="Python"/>
+					<feature abstract="true" name="R"/>
+				</alt>
+				<alt abstract="true" name="WebPublication">
+					<feature abstract="true" mandatory="true" name="JavaScript"/>
 				</alt>
 			</alt>
 			<alt abstract="true" mandatory="true" name="VisualizationLibrary">
-				<feature name="tabularx"/>
+				<feature name="tabular"/>
 				<feature name="matplotlib"/>
+				<feature name="gt"/>
+				<feature name="d3"/>
 			</alt>
 		</and>
 	</struct>
@@ -29,13 +35,25 @@
 		<rule>
 			<imp>
 				<var>Latex</var>
-				<var>tabularx</var>
+				<var>tabular</var>
 			</imp>
 		</rule>
 		<rule>
 			<imp>
 				<var>Python</var>
 				<var>matplotlib</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>R</var>
+				<var>gt</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>JavaScript</var>
+				<var>d3</var>
 			</imp>
 		</rule>
 	</constraints>

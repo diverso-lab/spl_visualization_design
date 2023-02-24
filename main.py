@@ -275,7 +275,7 @@ if __name__ == '__main__':
         template = environment.get_template('templates/template.tex')
         content = template.render(maps)
 
-        with open('visualization.tex', 'w', encoding='utf-8') as file:
+        with open('visualization_graph.tex', 'w', encoding='utf-8') as file:
             file.write(content)
 
     if type == "table":
@@ -286,6 +286,29 @@ if __name__ == '__main__':
         # Parse configurations and attributes
         configurations = [parse_configuration(file, fms) for file in configurations_files]
         attributes = [parse_attributes(file) for file in attributes_files]
+
+        # Load the mapping model
+        mapping_model = load_mapping_model('mapping_models/tabular.csv', fms)
+        print(f'MAPPING MODEL:')
+        for i, vp in enumerate(mapping_model.values()):
+            print(f'|-vp{i}: {vp}')
+
+        maps = build_template_maps(fms, mapping_model, configurations, attributes)
+        print(f'TEMPLATE CONFIGURATION:')
+        for h, v in maps.items():
+            if isinstance(v, list):
+                for i, multi_map in enumerate(v):
+                    print(f'|-plot{i}: {multi_map}')
+            else:
+                print(f'|-{h}: {v}')
+
+        template_loader = jinja2.FileSystemLoader(searchpath="./")
+        environment = jinja2.Environment(loader=template_loader)
+        template = environment.get_template('templates/tabular.tex')
+        content = template.render(maps)
+
+        with open('visualization_table.tex', 'w', encoding='utf-8') as file:
+            file.write(content)
 
 
     # print(f'MAPPING MODEL: {mapping_model}')

@@ -90,7 +90,8 @@ To replicate the experiments of the paper and generate the visualizations run th
 3. Scenario 3: `python main.py -f validation/configurations/scenario3 -t graph`
 4. Scenario 4: `python main.py -f validation/configurations/scenario4 -t graph`
 5. Scenario 5: `python main.py -f validation/configurations/scenario5 -t graph`
-6. Scenario 6: `python main.py -f validation/configurations/scenario6 -t graph`
+6. Scenario 6: `python main.py -f validation/configurations/scenario6 -t table`
+7. Scenario 7: `python main.py -f validation/configurations/scenario7 -t table`
 
 In cases 1,3, 4 and 5 cases, a `visualization.tex` file is generated in the main directory with the source code of the visualization in *Latex* using the *pgfplots* and *tikz* packages.
 
