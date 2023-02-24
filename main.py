@@ -229,7 +229,7 @@ if __name__ == '__main__':
                         help='Directory with the configurations and attributes files.')
 
     parser.add_argument('-t', dest='type', type=str, required=False,
-                        help='Directory with the configurations and attributes files.')
+                        help='Type of visualization (t = graph, t = table')
 
     args = parser.parse_args()
 
@@ -282,6 +282,10 @@ if __name__ == '__main__':
 
         # Load the feature models
         fms = load_feature_models_table()
+
+        # Parse configurations and attributes
+        configurations = [parse_configuration(file, fms) for file in configurations_files]
+        attributes = [parse_attributes(file) for file in attributes_files]
 
 
     # print(f'MAPPING MODEL: {mapping_model}')
