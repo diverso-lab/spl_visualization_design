@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="VisualizationSoftware">
+			<alt abstract="true" mandatory="true" name="TargetAudience">
+				<and abstract="true" name="ResearchPublication">
+					<feature abstract="true" mandatory="true" name="Latex"/>
+				</and>
+				<alt abstract="true" name="DataAnalysis">
+					<feature abstract="true" name="Python"/>
+					<feature abstract="true" name="R"/>
+				</alt>
+				<alt abstract="true" name="WebPublication">
+					<feature abstract="true" mandatory="true" name="JavaScript"/>
+				</alt>
+			</alt>
+			<alt abstract="true" mandatory="true" name="VisualizationLibrary">
+				<feature name="tabular"/>
+				<feature name="matplotlib"/>
+				<feature name="gt"/>
+				<feature name="d3"/>
+			</alt>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Latex</var>
+				<var>tabular</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Python</var>
+				<var>matplotlib</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>R</var>
+				<var>gt</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>JavaScript</var>
+				<var>d3</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

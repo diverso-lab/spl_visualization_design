@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="Visualization"/>
+	<feature automatic="selected" name="MessageToDisplay"/>
+	<feature automatic="unselected" name="IndividualValues"/>
+	<feature automatic="unselected" name="CompareIndividualValues"/>
+	<feature automatic="unselected" name="PreciseValues"/>
+	<feature automatic="unselected" name="PatternsTrendsAndExceptions"/>
+	<feature automatic="unselected" name="MoreThanOneUnitOfMeasure"/>
+	<feature automatic="unselected" name="VariousLevelsOfAggregation"/>
+	<feature manual="selected" name="EntireSeriesOfValues"/>
+	<feature automatic="selected" name="Display"/>
+	<feature automatic="unselected" name="Graph"/>
+	<feature automatic="selected" name="Table"/>
+</configuration>

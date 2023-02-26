@@ -1,6 +1,6 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
-- [Variability in Data Visualization: a Software Product Line Approach](#variability-in-data-visualization-a-software-product-line-approach)
+- [A Software Product Line for Managing Variability and Best Practices in Data Visualization](#a-software-product-line-for-managing-variability-and-best-practices-in-data-visualization)
   - [Artifact description](#artifact-description)
   - [How to use it](#how-to-use-it)
     - [Requirements](#requirements)
@@ -10,8 +10,8 @@
   - [Validation replication](#validation-replication)
   - [References and third-party software](#references-and-third-party-software)
 
-# Variability in Data Visualization: a Software Product Line Approach
-This repository contains all the resources and artifacts that support the paper entitled "Variability in Data Visualization: a Software Product Line Approach" submmited to the 26th International Systems and Software Product Line Conference (SPLC 2022).
+# A Software Product Line for Managing Variability and Best Practices in Data Visualization
+This repository contains all the resources and artifacts that support the paper entitled "A Software Product Line for Managing Variability and Best Practices in Data Visualization" submmited to the Journal of Systems and Software special Issue 2023.
 
 ## Artifact description
 An implementation of the *software product line* (SPL) for the *visualization design process* (VDP) that allows generating customized visualizations following the best design practices in data visualization.
@@ -43,12 +43,12 @@ Additionally, we provide the following resources to replicate the visualizations
 ## How to use it
 
 ### Requirements
-- [Python 3.9+](https://www.python.org/) to execute the SPL and generate a visualization.
+- [Python 3.10+](https://www.python.org/) to execute the SPL and generate a visualization.
 - [FeatureIDE](https://www.featureide.de/), only in case you want to create new configurations for other visualizations.
 
 ### Download and install
 To use the SPL follow the next steps:
-1. Install [Python 3.9+](https://www.python.org/)
+1. Install [Python 3.10+](https://www.python.org/)
 2. Download this repository and enter into the main directory: 
 
    `cd spl_visualization_design` 
@@ -64,7 +64,7 @@ To use the SPL follow the next steps:
    
    `pip install -r requirements.txt`
 
-   ** In case that you are running Ubuntu, please install the package python3.9-dev and update wheel and setuptools with the command `pip  install --upgrade pip wheel setuptools` right after step 4.
+   ** In case that you are running Ubuntu, please install the package python3.10-dev and update wheel and setuptools with the command `pip  install --upgrade pip wheel setuptools` right after step 4.
 ### Execution
 To execute the SPL run the following command:
 
@@ -85,12 +85,17 @@ The scripts also print out in the terminal information about the process includi
 ## Validation replication
 To replicate the experiments of the paper and generate the visualizations run the following commands:
 
-1. Scenario 1: `python main.py -f validation/configurations/scenario1`
-2. Scenario 2: `python main.py -f validation/configurations/scenario2`
-3. Scenario 3: `python main.py -f validation/configurations/scenario3`
-4. Scenario 4: `python main.py -f validation/configurations/scenario4`
+1. Scenario 1: `python main.py -f validation/configurations/scenario1 -t graph`
+2. Scenario 2: `python main.py -f validation/configurations/scenario2 -t table`
+3. Scenario 3: `python main.py -f validation/configurations/scenario3 -t graph`
+4. Scenario 4: `python main.py -f validation/configurations/scenario4 -t graph`
+5. Scenario 5: `python main.py -f validation/configurations/scenario5 -t graph`
+6. Scenario 6: `python main.py -f validation/configurations/scenario6 -t table`
+7. Scenario 7: `python main.py -f validation/configurations/scenario7 -t table`
 
-In all cases, a `visualization.tex` file is generated in the main directory with the source code of the visualization in *Latex* using the *pgfplots* and *tikz* packages.
+In cases 1,3, 4 and 5 cases, a `visualization.tex` file is generated in the main directory with the source code of the visualization in *Latex* using the *pgfplots* and *tikz* packages.
+
+In cases 2, 6 and 7 cases, a `visualization.tex` file is generated in the main directory with the source code of the visualization in *Latex* using the *tabular* packages.
 
 In the [Validation folder](validation/) you can find all the resources, including the data files and the generated visualizations.
 
